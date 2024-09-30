@@ -20,22 +20,22 @@ async def send_Email(payload: GettingValues = Depends(GettingValues)):
 
     if ph_value < 6 or ph_value > 7:
         
-        sendEmail(["moradacarl2711@gmail.com"], "Alert! Problem with Water", 
+        sendEmail(["vj.pablo03@gmail.com", "victorbernabe87@gmail.com"], "Alert! Problem with Water", 
                   f"Ph Sensor Value:{ph_value}.The Water Quality is dirty. Please change it now!")
     if temperature > 40:
-        sendEmail(["moradacarl2711@gmail.com"], "The temperature is not normal", 
+        sendEmail(["vj.pablo03@gmail.com", "victorbernabe87@gmail.com"], "The temperature is not normal", 
                   f"Make sure the temperature is complementary for the chicks")
    
     if humid < 55:
         humText = f"Temperatue Value:{temperature}. The humidity is not normal. Make sure the humidity is complementary for the chick"
-        sendEmail(["moradacarl2711@gmail.com"], "The temperature is not normal", 
+        sendEmail(["vj.pablo03@gmail.com", "victorbernabe87@gmail.com"], "The temperature is not normal", 
                   humText)
     if waterLevel == 0:
         waterText = "The water level is low. Please Refill it."
-        sendEmail(["moradacarl2711@gmail.com"], "No more water!", 
+        sendEmail(["vj.pablo03@gmail.com", "victorbernabe87@gmail.com"], "No more water!", 
                   waterText)
     if ldrValue < 11:
         foodText = "There are no food for the chicken. Please Kindly refill it"
-        sendEmail(["moradacarl2711@gmail.com"], "Alert! No Food for the chicken", foodText)
+        sendEmail(["vj.pablo03@gmail.com", "victorbernabe87@gmail.com"], "Alert! No Food for the chicken", foodText)
 
     return {"Status": data}
