@@ -9,7 +9,7 @@ async def test():
     return "Hello World"
 
 
-@router.post("/SendEmail", status_code=status.HTTP_201_CREATED)
+@router.get("/SendEmail", status_code=status.HTTP_201_CREATED)
 async def send_Email(payload: GettingValues = Depends(GettingValues)):
     data = [float(i) for i in payload.values.split(",")]
     ph_value:float = data[0]
