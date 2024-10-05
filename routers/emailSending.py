@@ -6,7 +6,7 @@ router = APIRouter(tags=["Email"])
 
 @router.get("/try", status_code=status.HTTP_200_OK)
 async def test():
-    return {"data":"Hello World"}
+    return "Hello World"
 
 
 @router.post("/SendEmail", status_code=status.HTTP_201_CREATED)
@@ -38,4 +38,4 @@ async def send_Email(payload: GettingValues = Depends(GettingValues)):
         foodText = "There are no food for the chicken. Please Kindly refill it"
         sendEmail(["vj.pablo03@gmail.com", "victorbernabe87@gmail.com"], "Alert! No Food for the chicken", foodText)
 
-    return {"Status": data}
+    return "Done"
